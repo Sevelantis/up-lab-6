@@ -55,7 +55,7 @@ namespace up_lab_6
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             string text = ESC + CommandBox.Text;
-            string fullPath = @"C:\Users\szyminson\source\repos\up-lab-6\up-lab-6\bin\Debug\gpcl6win64.exe";
+            string fullPath = @"A:\SZKOLA\aaaSEMESTR - 5\UP\Lab6\up-lab-6\up-lab-6\bin\Debug\gpcl6win64.exe";
             string pclFile = "out.pcl";
             File.WriteAllText(pclFile, text);
             ProcessStartInfo psi = new ProcessStartInfo();
@@ -125,7 +125,12 @@ namespace up_lab_6
 
         private void DrawCircleButton_Click(object sender, RoutedEventArgs e)
         {
-            CommandBox.Text += "\x1bE\x1b\x0bIN;SP1PA10,10;PD2500,10,10,1500,10,10;";//SP1;PA600,600;CI200;\x1b\x0a\x1bE";
+            CommandBox.Text += "\x1b%0B" +
+                "IN;SP1;PA3000,7000;EW3000,15,330;" +
+                "PA5000,7000;EW300,0,360;" +
+                "PA6000,7000;EW300,0,360;" +
+                "PA7000,7000;EW300,0,360;" +
+                "\x1b%0A";
         }
     }
 }
